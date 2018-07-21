@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  username = '';
+  constructor() {
+    
+  }
+
+  resetUsername() {
+    this.username = '';
+  }
 }
