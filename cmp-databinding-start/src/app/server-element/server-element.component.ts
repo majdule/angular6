@@ -13,6 +13,7 @@ import {
   ViewEncapsulation,
   ViewChild,
   ElementRef,
+  ContentChild,
 } from '@angular/core';
 
 @Component({
@@ -34,6 +35,7 @@ OnDestroy {
   @Input('srvElement') element: {type: string, name: string, content: string};
   @Input() name: string;
   @ViewChild('heading') header: ElementRef;
+  @ContentChild('contentParagraph') paragraph: ElementRef;
 
   constructor() {
     console.log('constructore called!');
@@ -48,6 +50,7 @@ OnDestroy {
 
   ngOnInit() {
     console.log('ngoninit called!');
+    console.log('Text content of paragraph: ' + this.paragraph.nativeElement.textContent);
   }
 
   ngDoCheck() {
@@ -56,6 +59,7 @@ OnDestroy {
 
   ngAfterContentInit() {
     console.log('Ng After Init called!');
+    console.log('Text content of paragraph: ' + this.paragraph.nativeElement.textContent);
   }
 
   ngAfterContentChecked() {
